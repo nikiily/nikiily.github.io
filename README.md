@@ -10,4 +10,4 @@ a minimalistic portfolio website showcasing graphic design, Discord bot developm
 - **custom projects** 
 
 
-this portfolio is built with HTML, CSS (Tailwind), and JavaScript for a completely static experience that loads fast and works everywhere.
+this portfolio is built with HTML, CSS (Tailwind), and JavaScript.
