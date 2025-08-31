@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>niki's space ♡</title>
+    <meta name="description" content="niki's portfolio - graphic design, discord bots, and web development services.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(320, 20%, 96%)',
+                        foreground: 'hsl(240, 10%, 20%)',
+                        card: 'hsl(0, 0%, 100%)',
+                        'card-foreground': 'hsl(240, 10%, 15%)',
+                        primary: 'hsl(328, 60%, 75%)',
+                        'primary-foreground': 'hsl(0, 0%, 100%)',
+                        secondary: 'hsl(320, 15%, 92%)',
+                        'secondary-foreground': 'hsl(240, 10%, 15%)',
+                        muted: 'hsl(320, 15%, 90%)',
+                        'muted-foreground': 'hsl(240, 5%, 45%)',
+                        accent: 'hsl(328, 60%, 75%)',
+                        'accent-foreground': 'hsl(0, 0%, 100%)',
+                        border: 'hsl(320, 20%, 85%)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'lg': '12px',
+                        'md': '10px',
+                        'sm': '8px',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, hsl(328, 60%, 85%) 0%, hsl(328, 60%, 75%) 100%);
+        }
+        .pink-circle-icon {
+            width: 24px;
+            height: 24px;
+            background: hsl(328, 60%, 75%);
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+        }
+        .hover-scale {
+            transition: transform 0.2s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+        .nav-button {
+            transition: all 0.2s ease;
+        }
+        .nav-button.active {
+            background: hsl(328, 60%, 75%);
+            color: hsl(0, 0%, 100%);
+        }
+        .nav-button:not(.active) {
+            background: hsl(320, 15%, 92%);
+            color: hsl(240, 10%, 15%);
+        }
+        .nav-button:not(.active):hover {
+            background: hsl(328, 60%, 75%);
+            color: hsl(0, 0%, 100%);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-background text-foreground font-sans">
+    <div class="min-h-screen bg-background">
+        <!-- Header -->
+        <header class="text-center py-8">
+            <div class="flex justify-center items-center mb-4">
+                <h1 class="text-3xl font-light text-foreground">
+                    <span class="text-primary font-medium">niki's</span> space ♡
+                </h1>
+            </div>
+            
+            <div class="flex justify-center space-x-2">
+                <button onclick="showTab('home')" id="home-tab" class="nav-button active px-6 py-2 rounded-full text-sm font-medium">
+                    home
+                </button>
+                <button onclick="showTab('commissions')" id="commissions-tab" class="nav-button px-6 py-2 rounded-full text-sm font-medium">
+                    commissions
+                </button>
+            </div>
+        </header>
+
+        <div class="max-w-2xl mx-auto px-4 pb-12">
+            <!-- Home Tab -->
+            <div id="home-content" class="tab-content active space-y-6">
+                <!-- Hero Section -->
+                <div class="gradient-bg rounded-2xl p-8 text-center text-white shadow-lg">
+                    <h2 class="text-2xl font-medium mb-3">looking for a personalized design?</h2>
+                    <p class="text-white/90 mb-6">make a ticket or dm me for commission inquiries ♡</p>
+                    <button onclick="showTab('commissions')" class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 hover-scale">
+                        view my services
+                    </button>
+                </div>
+
+                <!-- Welcome Section -->
+                <div class="bg-card p-6 shadow-sm rounded-lg border">
+                    <div class="flex items-center mb-4">
+                        <div class="pink-circle-icon">
+                            <i data-lucide="heart" class="w-3 h-3 text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-foreground">welcome to my page! ♡</h3>
+                    </div>
+                    <div class="space-y-4 text-muted-foreground text-sm leading-relaxed">
+                        <p>hi! i am <span class="text-primary font-semibold">niki</span> and i love creating digital art and making everything look pretty! ♡</p>
+                        <p>i am not a professional artist or developer, but i am always eager to learn new things and do my best to make sure you are happy with the results ♡</p>
+                        <p>this little corner of the internet is where i showcase my work and connect with others. feel free to explore, and don't hesitate to reach out if you'd like to collaborate! ♡</p>
+                    </div>
+                </div>
+
+                <!-- My Socials -->
+                <div class="bg-card p-6 shadow-sm rounded-lg border">
+                    <div class="flex items-center mb-4">
+                        <div class="pink-circle-icon">
+                            <i data-lucide="link" class="w-3 h-3 text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-foreground">my links ♡</h3>
+                    </div>
+                    <div class="flex justify-center space-x-4 text-muted-foreground">
+                        <a href="https://www.instagram.com/nicolaaq/" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://x.com/niikiilyy" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://discord.com/users/295255597392068631" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.196.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                            </svg>
+                        </a>
+                        <a href="https://buy.stripe.com/5kQ3cn774cMf3MX718fbq0c" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">
+                            <i data-lucide="credit-card" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cute Stats -->
+                <div class="bg-card p-6 shadow-sm rounded-lg border">
+                    <div class="flex items-center mb-4">
+                        <div class="pink-circle-icon">
+                            <i data-lucide="bar-chart-3" class="w-3 h-3 text-white"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-foreground">stats ♡</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">42</div>
+                            <div class="text-xs text-muted-foreground">commissions completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">5</div>
+                            <div class="text-xs text-muted-foreground">coding projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">∞</div>
+                            <div class="text-xs text-muted-foreground">cups of tea</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">99+</div>
+                            <div class="text-xs text-muted-foreground">mid-crashouts</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Server Join Section -->
+                <div class="gradient-bg rounded-2xl p-8 text-center text-white shadow-lg">
+                    <h3 class="text-xl font-medium mb-3">join my commission server</h3>
+                    <p class="text-white/90 mb-6 text-sm">connect with me directly on discord for commissions, updates, or to see my work samples! ♡</p>
+                    <button onclick="window.open('https://discord.gg/FUBUkWUZg9', '_blank')" class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 hover-scale">
+                        click here
+                    </button>
+                </div>
+
+                <p class="text-center text-xs text-muted-foreground mt-4">
+                    ♡ made with lots of love and pink pixels ♡
+                </p>
+            </div>
+
+            <!-- Commissions Tab -->
+            <div id="commissions-content" class="tab-content space-y-6">
+                <!-- Hero Section -->
+                <div class="gradient-bg rounded-2xl p-8 text-center text-white shadow-lg">
+                    <h2 class="text-2xl font-medium mb-3">what do i offer?</h2>
+                </div>
+
+                <!-- Services Grid -->
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div class="bg-card p-6 shadow-sm hover-scale transition-all duration-200 rounded-lg border">
+                        <h3 class="text-lg font-medium text-foreground mb-2">graphic design</h3>
+                        <p class="text-sm text-muted-foreground mb-4">server banners, icons, emojis, and more!</p>
+                    </div>
+
+                    <div class="bg-card p-6 shadow-sm hover-scale transition-all duration-200 rounded-lg border">
+                        <h3 class="text-lg font-medium text-foreground mb-2">discord bots</h3>
+                        <p class="text-sm text-muted-foreground mb-4">custom discord bots with simple commands</p>
+                    </div>
+
+                    <div class="bg-card p-6 shadow-sm hover-scale transition-all duration-200 rounded-lg border">
+                        <h3 class="text-lg font-medium text-foreground mb-2">discord servers</h3>
+                        <p class="text-sm text-muted-foreground mb-4">fully personalized server with configured bots and custom branding</p>
+                    </div>
+
+                    <div class="bg-card p-6 shadow-sm hover-scale transition-all duration-200 rounded-lg border">
+                        <h3 class="text-lg font-medium text-foreground mb-2">custom projects</h3>
+                        <div class="text-sm text-muted-foreground mb-4">have something specific in mind? let me know!</div>
+                    </div>
+                </div>
+
+                <!-- How It Works -->
+                <div class="bg-card p-6 shadow-sm rounded-lg border">
+                    <h3 class="text-lg font-medium text-foreground mb-6 text-center">how does it work? ♡</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-medium">1</div>
+                            <div>
+                                <h4 class="font-medium text-foreground mb-1">reach out</h4>
+                                <p class="text-sm text-muted-foreground">make a ticket or dm me with your project details and vision!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-medium">2</div>
+                            <div>
+                                <h4 class="font-medium text-foreground mb-1">planning</h4>
+                                <p class="text-sm text-muted-foreground">we'll discuss timeline, pricing, and other details</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-medium">3</div>
+                            <div>
+                                <h4 class="font-medium text-foreground mb-1">creation</h4>
+                                <p class="text-sm text-muted-foreground">i'll work my magic and keep you updated!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground text-sm font-medium">4</div>
+                            <div>
+                                <h4 class="font-medium text-foreground mb-1">delivery</h4>
+                                <p class="text-sm text-muted-foreground">receive your project and share a smile!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ready to Start CTA -->
+                <div class="gradient-bg rounded-2xl p-8 text-center text-white shadow-lg">
+                    <h3 class="text-xl font-medium mb-3">ready to start your project?</h3>
+                    <p class="text-white/90 mb-6 text-sm">let's create something special together!</p>
+                    <button onclick="window.open('https://discord.gg/FUBUkWUZg9', '_blank')" class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 hover-scale">
+                        get in touch ♡
+                    </button>
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.nav-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabName + '-content').classList.add('active');
+            
+            // Add active class to selected button
+            document.getElementById(tabName + '-tab').classList.add('active');
+        }
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
