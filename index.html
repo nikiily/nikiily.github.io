@@ -157,7 +157,7 @@
                     </div>
                 </div>
 
-                <!-- Cute Stats -->
+                
                 <div class="bg-card p-6 shadow-sm rounded-lg border">
                     <div class="flex items-center mb-4">
                         <div class="pink-circle-icon">
@@ -206,7 +206,7 @@
                     <h2 class="text-2xl font-medium mb-3">what do i offer?</h2>
                 </div>
 
-                <!-- Services Grid -->
+                
                 <div class="grid md:grid-cols-2 gap-4">
                     <div class="bg-card p-6 shadow-sm hover-scale transition-all duration-200 rounded-lg border">
                         <h3 class="text-lg font-medium text-foreground mb-2">graphic design</h3>
@@ -229,7 +229,7 @@
                     </div>
                 </div>
 
-                <!-- How It Works -->
+                
                 <div class="bg-card p-6 shadow-sm rounded-lg border">
                     <h3 class="text-lg font-medium text-foreground mb-6 text-center">how does it work? ♡</h3>
                     <div class="space-y-4">
@@ -269,9 +269,12 @@
                     <h3 class="text-xl font-medium mb-3">ready to start your project?</h3>
                     <p class="text-white/90 mb-6 text-sm">let's create something special together!</p>
                     <button onclick="window.open('https://discord.gg/FUBUkWUZg9', '_blank')" class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 hover-scale">
-                        get in touch ♡
-                    </button>
+                        get in touch ♡  </button>
+                    </div>
+                    </div>
     <script>
+    
+
         function showTab(tabName) {
             // Hide all tab contents
             document.querySelectorAll('.tab-content').forEach(content => {
@@ -292,6 +295,58 @@
 
         // Initialize Lucide icons
         lucide.createIcons();
+        
+    </script>
+    <div id="view-counter" style="
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  background: linear-gradient(135deg, rgba(248,166,209,0.85), rgba(251,194,235,0.85));
+  color: white;
+  padding: 8px 16px;
+  border-radius: 9999px; /* perfect pill */
+  font-family: 'Arial Rounded MT Bold', 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+">
+  loading...
+</div>
+
+<style>
+
+  #view-counter:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 16px rgba(0,0,0,0.25);
+  }
+</style>
+
+    <script>
+      const url = "https://api.npoint.io/67c7816fce5329871dfc"; 
+
+      async function updateViews() {
+        try {
+          let res = await fetch(url);
+          let data = await res.json();
+
+          data.views++;
+          document.getElementById("view-counter").innerText = data.views + " views";
+
+          await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+          });
+        } catch (err) {
+          document.getElementById("view-counter").innerText = "error";
+          console.error(err);
+        }
+      }
+
+      updateViews();
     </script>
 </body>
 </html>
